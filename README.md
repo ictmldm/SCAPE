@@ -33,3 +33,6 @@ Install requirements (in the cloned repository):
 ```
 pip3 install -r requirements.txt
 ```
+
+## Update
+[2025-05-21]  We would like to acknowledge that the comments in this project have been automatically regenerated using `Gemini-2.5-Flash`.

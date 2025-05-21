@@ -1,0 +1,42 @@
+# config.yaml
+
+model:
+  fact_model_path: "./FactCC-PENS"
+
+data:
+  train_data_path: "data/processed/train_raw_for_rec_limit_5.feather"
+  valid_data_path: "data/processed/valid_raw_for_rec_limit_5.feather"
+  train_data_all_path: "data/processed/train_raw_for_rec_all.feather"
+  valid_data_all_path: "data/processed/valid_raw_for_rec_all.feather"
+  # cl_data_path: "data/fact_data/train_cl_raw_limit_1_llm_sorted.feather"
+  cl_data_path: "data/fact_data/train_cl_raw_limit_1_llm.feather"
+
+
+preprocess_data:
+  original_news_path: "data/PENS/news.tsv"
+  simplify_news_path: "data/processed/simplify_news.feather"
+  test_raw_path: "data/processed/test_raw.feather"
+  train_raw_path: "data/processed/train_raw.feather"
+  valid_raw_path: "data/processed/valid_raw.feather"
+  test_file_path: "data/PENS/personalized_test.tsv"
+  train_file_path: "data/PENS/train.tsv"
+  valid_file_path: "data/PENS/valid.tsv"
+  pretrain_raw_ex_path: "data/processed/pretrain_raw_ex.feather"
+  pretrain_raw_path: "data/processed/pretrain_raw.feather"
+
+preprocess:
+  batch_size: 16
+  max_length: 1024
+  max_title_length: 100
+  max_click_length: 50
+  neg_sample_num: 4
+  limit: 5
+
+environment:
+  cuda_visible_devices: "6"
+  hf_datasets_offline: "1"
+  transformers_offline: "1"
+
+tokenizer:
+  padding: "max_length"
+  truncation: true
